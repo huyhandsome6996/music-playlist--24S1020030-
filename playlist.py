@@ -23,9 +23,14 @@ def add_song():
 
 
 def view_playlist():
-    # Duyệt list songs và in ra
-    # Ví dụ: 1. Lạc Trôi - Sơn Tùng MTP (240s)
-    pass
+    print("\n--- Danh sách phát ---")
+    if not songs:
+        print("Playlist hiện đang trống.")
+        return
+    
+    for i, song in enumerate(songs, start=1):
+        print(f"{i}. {song['title']} - {song['artist']} ({song['duration']}s)")
+
 
 
 def search_by_artist():
