@@ -3,7 +3,23 @@ songs = []
 
 
 def add_song():
-    print("Đã thêm bài hát vào playlist.")
+    print("\n--- Thêm bài hát ---")
+    title = input("Nhập tên bài hát: ").strip()
+    artist = input("Nhập tên ca sĩ: ").strip()
+    duration = input("Nhập thời lượng (giây): ").strip()
+
+    # Kiểm tra duration có phải số không
+    if duration.isdigit():
+        duration = int(duration)
+    else:
+        print("❌ Thời lượng phải là số! Không thể thêm.")
+        return
+
+    # Lưu vào playlist (danh sách toàn cục)
+    song = {'title': title, 'artist': artist, 'duration': duration}
+    songs.append(song)
+    print("✔ Đã thêm bài hát vào playlist.")
+
 
 
 def view_playlist():
